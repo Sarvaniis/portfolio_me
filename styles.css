@@ -1,0 +1,743 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2d2d2d;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: #2d2d2d;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #007bff;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 0 5%;
+}
+
+.hero-content {
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.highlight {
+    color: #007bff;
+}
+
+.typing-text {
+    overflow: hidden;
+    border-right: 0.15em solid #007bff;
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end),
+               blink-caret 0.75s step-end infinite;
+}
+
+/* Sections Common Styles */
+section {
+    padding: 5rem 5%;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+/* about section */
+
+.about {
+    background-color: #ffffff;
+    min-height: 100vh;
+    width: 100%;
+    padding: 120px 20px 60px 20px; /* Increased top padding to account for navbar */
+    position: relative; /* Add position relative */
+    z-index: 1; /* Ensure proper stacking context */
+}
+
+.about h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Changed to flex-start for better text alignment */
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff; /* Explicit background color */
+}
+
+.about-text {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Added shadow for better visibility */
+}
+
+.about-text p {
+    color: #333 !important;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: justify;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative !important;
+    z-index: 2;
+    font-weight: 400; /* Added explicit font weight */
+}
+
+.about-text:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.about-image {
+    order: 1;
+    max-width: 300px; /* Reduced max-width for better circular appearance */
+    margin: 0 auto; /* Center the image container */
+}
+
+.about-image img {
+    width: 100%;
+    height: 200px; /* Fixed height for perfect circle */
+    object-fit: cover; /* This ensures the image covers the area without distortion */
+    border-radius: 50%; /* This makes it perfectly circular */
+    border: 5px #c3cfe2; /* Add a nice border - you can change the color */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Add hover effect */
+.about-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* For mobile responsiveness */
+@media (max-width: 768px) {
+    .about {
+        padding: 100px 15px 40px 15px;
+    }
+
+    .about-content {
+        flex-direction: row;
+        padding: 10px;
+    }
+
+    .about-text {
+        padding: 15px;
+        order: 2; /* Move text below image on mobile */
+    }
+
+    .about-image {
+        max-width: 250px; /* Slightly smaller on mobile */
+    }
+
+    .about-image img {
+        height: 250px;
+    }
+
+    .about-text p {
+        font-size: 15px;
+        line-height: 1.6;
+        text-align: left;
+    }
+}
+
+
+/* Skills Section */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+}
+
+.skill-card i {
+    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #f0f0f0;
+    border-radius: 5px;
+    margin-top: 1rem;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: #007bff;
+    animation: progress 1.5s ease-in-out;
+}
+
+/* Projects Section */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;  /* Allows dynamic height */
+    max-height: 400px;  /* Limits height */
+    object-fit: cover;
+}
+
+
+.project-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1.5rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-info {
+    transform: translateY(0);
+}
+
+/* Contact Section */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.submit-btn {
+    background: #007bff;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #0056b3;
+}
+
+/* Footer */
+footer {
+    background: #2d2d2d;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+.social-links {
+    margin-bottom: 1rem;
+}
+
+.social-links a {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #007bff;
+}
+
+/* Animations */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #007bff }
+}
+
+@keyframes progress {
+    from { width: 0 }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+    }
+    
+    .burger {
+        display: block;
+    }
+    
+    .nav-links {
+        display: none;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Disney Character Animation */
+.disney-character {
+    position: absolute;
+    right: 5%;
+    top: 0;
+    width: 150px;
+    z-index: 2;
+    animation: floatCharacter 15s linear infinite;
+    pointer-events: none; /* This prevents the character from interfering with interactions */
+    background-image: url('disney-sprite-sheet.png');
+    background-size: cover;
+    animation: 
+        floatCharacter 15s linear infinite,
+        spriteAnimation 0.8s steps(8) infinite;
+}
+
+.disney-character img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.2));
+}
+
+@keyframes floatCharacter {
+    0% {
+        transform: translateY(-100%) rotate(5deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(100vh) rotate(-5deg);
+        opacity: 0;
+    }
+}
+
+/* Add some wobble animation */
+@keyframes wobble {
+    0%, 100% {
+        transform: translateX(0) rotate(5deg);
+    }
+    50% {
+        transform: translateX(10px) rotate(-5deg);
+    }
+}
+
+.disney-character img {
+    animation: wobble 3s ease-in-out infinite;
+}
+
+/* Make it responsive */
+@media (max-width: 768px) {
+    .disney-character {
+        width: 100px;
+        right: 2%;
+    }
+}
+
+@keyframes spriteAnimation {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 0;
+    }
+} 
+
+.experience-item, .education-item {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 30px;
+}
+
+.experience-item::before, .education-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    z-index: 1;
+}
+
+.experience-item::after, .education-item::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 20px;
+    width: 2px;
+    height: calc(100% + 10px);
+    background: var(--primary-color);
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.experience-item:last-child::after, .education-item:last-child::after {
+    display: none;
+}
+
+.experience-date, .education-date {
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Experience Section */
+.experience {
+    background-color: #ffffff;
+    padding: 5rem 5%;
+}
+
+.experience h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.experience-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-10px);
+}
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.experience-header h3 {
+    color: #007bff;
+    font-size: 1.5rem;
+}
+
+.experience-date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.experience-card h4 {
+    color: #333;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.experience-list {
+    list-style: none;
+    padding: 0;
+}
+
+.experience-list li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.experience-list i {
+    color: #007bff;
+}
+
+/* Extracurricular Section */
+.extracurricular-section {
+    margin-top: 4rem;
+}
+
+.extracurricular-section h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.extracurricular-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.extracurricular-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.extracurricular-card:hover {
+    transform: translateY(-10px);
+}
+
+.extracurricular-card i {
+    font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+.extracurricular-card h4 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.extracurricular-card p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .experience-grid,
+    .extracurricular-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .experience-card,
+    .extracurricular-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Achievements Section */
+.achievements {
+    background-color: #ffffff;
+    padding: 5rem 5%;
+}
+
+.achievements h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.achievement-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-10px);
+}
+
+.achievement-card i {
+    font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 1.5rem;
+}
+
+.achievement-card h3 {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.achievement-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .achievements-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .achievement-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Certifications Section */
+.certifications {
+    background-color: #ffffff;
+    padding: 5rem 5%;
+}
+
+.certifications h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.certification-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.certification-card:hover {
+    transform: translateY(-10px);
+}
+
+.certification-card i {
+    font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 1.5rem;
+}
+
+.certification-card h3 {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.certification-card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.certification-link {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.certification-link:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+    .certifications-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .certification-card {
+        padding: 1.5rem;
+    }
+}
