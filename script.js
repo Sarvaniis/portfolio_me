@@ -216,3 +216,44 @@ form.addEventListener('submit', (e) => {
     alert('Thank you for your message! I will get back to you soon.');
     form.reset();
 });
+
+// Contact Form Handling
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Get form values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value;
+    
+    // Create form data object
+    const formData = {
+        name: name,
+        email: email,
+        subject: subject,
+        message: message
+    };
+    
+    // Send data to backend
+    fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.error) {
+            alert('Error: ' + data.error);
+        } else {
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Sorry, there was an error sending your message. Please try again later.');
+    });
+});
